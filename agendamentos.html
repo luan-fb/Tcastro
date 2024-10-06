@@ -20,7 +20,7 @@
 
     <header>
         <div class="header-container">
-            <img src="../img/logo.jpg" id="logo">
+            <img src="img/logo.jpg" id="logo">
             <h1>STUDIO TCASTRO NAIL DESIGNER</h1>
 
             <div class="header-social">
@@ -126,7 +126,7 @@
 
 
             <div class="footer-logo">
-                <img src="../img/logo.jpg" alt="Logo Tcastro">
+                <img src="img/logo.jpg" alt="Logo Tcastro">
             </div>
         </div>
     </footer>
@@ -134,7 +134,7 @@
 
     <script>
         document.getElementById('agendamento-form').addEventListener('submit', function (e) {
-            e.preventDefault(); // Evita o envio tradicional do formulário
+            e.preventDefault(); 
 
 
             const procedimento = document.getElementById('procedimento').value;
@@ -142,16 +142,16 @@
             const data = document.getElementById('data').value;
             const hora = document.getElementById('hora').value;
 
-            // Mensagem que será enviada pelo WhatsApp
+            
             const mensagem = `Olá, meu nome é ${nome}. Gostaria de agendar um ${procedimento} para o dia ${data} às ${hora}.`;
 
-            // Número de telefone (coloque o número correto)
-            const telefone = '+5531987039575';  // Número de exemplo
+           
+            const telefone = '+5531987039575';  
 
-            // Monta a URL do WhatsApp
+            
             const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(mensagem)}`;
 
-            // Redireciona para o WhatsApp com a mensagem
+            
             window.open(url, '_blank');
         });
     </script>

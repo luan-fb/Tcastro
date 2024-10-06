@@ -688,6 +688,16 @@ nav ul li a:hover {
     .course-info {
         padding-left: 0;
     }
+
+    .servicos-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; 
+    }
+
+    
+  
+
 }
 
 
