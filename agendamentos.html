@@ -52,47 +52,57 @@
     <section class="agendamentos-section">
         <h2>Agendamento de Serviços</h2>
         <h4>Para agilizar seu atendimento e garantir a melhor experiência em nosso Studio Tcastro, pedimos que você
-            escolha o procedimento desejado, juntamente com o melhor dia e horário de sua preferência. Assim, poderemos
+            escolha os procedimentos desejados, juntamente com o melhor dia e horário de sua preferência. Assim,
+            poderemos
             verificar a disponibilidade e confirmar seu agendamento o mais rápido possível.
 
             Agradecemos pela sua compreensão e estamos ansiosos para atendê-lo!</h4>
         <form id="agendamento-form">
-            <label for="procedimento">Selecione o Procedimento</label>
-            <select id="procedimento" name="procedimento">
-                <option value="alongamento-f1">Alongamento Molde F1</option>
-                <option value="Alongamento Fibra de vidro">Alongamento Fibra de vidro</option>
-                <option value="Alongamento molde russo">Alongamento molde russo</option>
-                <option value="Alongamento e pedicure">Alongamento e pedicure</option>
-                <option value="Alongamento nos pes">Alongamento nos pes</option>
-                <option value="Blindagem">Blindagem</option>
-                <option value="Banho de gel">Banho de gel</option>
-                <option value="Cuticulagem">Cuticulagem</option>
-                <option value="Esmaltação em gel">Esmaltação em gel</option>
-                <option value="Manutenção">Manutenção</option>
-                <option value="Manutenção Blindagem">Manutenção Blindagem</option>
-                <option value="Manicure">Manicure</option>
-                <option value="Manicure/Pedicure">Manutenção Blindagem</option>
-                <option value="Reposição de Unha">Reposição de Unha</option>
-                <option value="Remoção Alongamento">Remoção Alongamento</option>
-                <option value="Pedicure">Manutenção Blindagem</option>
-
-
-
-            </select>
+            <div id="procedimentos-container">
+                <div class="procedimento-group">
+                    <label for="procedimento">Selecione o Procedimento</label>
+                    <select class="procedimento" name="procedimento" onchange="mostrarSubtipo(this)">
+                        <option value="">Selecione um procedimento</option>
+                        <option value="Alongamento Molde f1">Alongamento Molde F1</option>
+                        <option value="Alongamento De Fibra">Alongamento Fibra de vidro</option>
+                        <option value="Alongamento Molde Russo">Alongamento molde russo</option>
+                        <option value="Alongamento Nos Pes">Alongamento nos pés</option>
+                        <option value="Blindagem">Blindagem</option>
+                        <option value="Banho De Gel">Banho de gel</option>
+                        <option value="Cuticulagem">Cuticulagem</option>
+                        <option value="Esmaltação Em Gel">Esmaltação em gel</option>
+                        <option value="Manutencao">Manutenção</option>
+                        <option value="Manutencao Blindagem">Manutenção Blindagem</option>
+                        <option value="Manicure">Manicure</option>
+                        <option value="Manicure, Pedicure">Manicure/Pedicure</option>
+                        <option value="Reposicao De Unha">Reposição de Unha</option>
+                        <option value="Remocao de Alongamento">Remoção Alongamento</option>
+                        <option value="Pedicure">Pedicure</option>
+                    </select>
+                    <div class="subtipo-container" style="display:none;">
+                        <label for="subtipo">Selecione o Tipo de Alongamento</label>
+                        <select class="subtipo" name="subtipo">
+                            <option value="">Selecione um tipo</option>
+                            <option value="Básico">Básico</option>
+                            <option value="Decorado">Decorado</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="button" onclick="adicionarProcedimento()">Adicionar Outro Procedimento</button>
 
             <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome">
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
 
             <label for="data">Data Disponível</label>
-            <input type="date" id="data" name="data">
+            <input type="date" id="data" name="data" required>
 
             <label for="hora">Horário Disponível</label>
-            <input type="time" id="hora" name="hora">
+            <input type="time" id="hora" name="hora" required>
 
             <button type="submit" class="btn-enviar">Enviar para WhatsApp</button>
         </form>
     </section>
-
 
     <footer class="footer-section">
         <div class="agendamento-container">
@@ -124,34 +134,90 @@
                 </a>
             </div>
 
-
             <div class="footer-logo">
                 <img src="img/logo.jpg" alt="Logo Tcastro">
             </div>
         </div>
     </footer>
 
-
     <script>
+        function mostrarSubtipo(select) {
+            const subtipoContainer = select.nextElementSibling;
+            subtipoContainer.style.display = select.value.includes('Alongamento') ? 'block' : 'none';
+        }
+
+        function adicionarProcedimento() {
+            const procedimentosContainer = document.getElementById('procedimentos-container');
+            const procedimentoGroup = document.createElement('div');
+            procedimentoGroup.classList.add('procedimento-group');
+
+            procedimentoGroup.innerHTML = `
+                <label for="procedimento">Selecione o Procedimento</label>
+                <select class="procedimento" name="procedimento" onchange="mostrarSubtipo(this)">
+                    <option value="">Selecione um procedimento</option>
+                <option value="Alongamento Molde f1">Alongamento Molde F1</option>
+                <option value="Alongamento De Fibra">Alongamento Fibra de vidro</option>
+                <option value="Alongamento Molde Russo">Alongamento molde russo</option>
+                <option value="Alongamento Nos Pes">Alongamento nos pés</option>
+                <option value="Blindagem">Blindagem</option>
+                <option value="Banho De Gel">Banho de gel</option>
+                <option value="Cuticulagem">Cuticulagem</option>
+                <option value="Esmaltação Em Gel">Esmaltação em gel</option>
+                <option value="Manutencao">Manutenção</option>
+                <option value="Manutencao Blindagem">Manutenção Blindagem</option>
+                <option value="Manicure">Manicure</option>
+                <option value="Manicure, Pedicure">Manicure/Pedicure</option>
+                <option value="Reposicao De Unha">Reposição de Unha</option>
+                <option value="Remocao de Alongamento">Remoção Alongamento</option>
+                <option value="Pedicure">Pedicure</option>
+                   
+                </select>
+                <div class="subtipo-container" style="display:none;">
+                    <label for="subtipo">Selecione o Tipo de Alongamento</label>
+                    <select class="subtipo" name="subtipo">
+                        <option value="">Selecione um tipo</option>
+                        <option value="Básico">Básico</option>
+                        <option value="Decorado">Decorado</option>
+                    </select>
+                </div>
+            `;
+
+            procedimentosContainer.appendChild(procedimentoGroup);
+        }
+
         document.getElementById('agendamento-form').addEventListener('submit', function (e) {
-            e.preventDefault(); 
+            e.preventDefault();
 
+            const procedimentosSelecionados = [];
+            const procedimentos = document.querySelectorAll('.procedimento');
 
-            const procedimento = document.getElementById('procedimento').value;
+            procedimentos.forEach(select => {
+                const procedimento = select.value;
+                const subtipoSelect = select.nextElementSibling.querySelector('.subtipo');
+                const subtipo = subtipoSelect ? subtipoSelect.value : '';
+                if (procedimento) {
+                    procedimentosSelecionados.push(subtipo ? `${procedimento} (${subtipo})` : procedimento);
+                }
+            });
+
             const nome = document.getElementById('nome').value;
             const data = document.getElementById('data').value;
             const hora = document.getElementById('hora').value;
 
-            
-            const mensagem = `Olá, meu nome é ${nome}. Gostaria de agendar um ${procedimento} para o dia ${data} às ${hora}.`;
+            if (procedimentosSelecionados.length === 0 || !nome || !data || !hora) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
 
-           
-            const telefone = '+5531987039575';  
+            // Formatação da data e hora conforme necessário
+            const dataFormatada = new Date(data).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+            const horaFormatada = hora; // A hora é capturada no formato correto, mas você pode formatá-la se necessário.
 
-            
+            const mensagem = `Olá, meu nome é ${nome}. Gostaria de agendar os seguintes procedimentos: ${procedimentosSelecionados.join(', ')} para o dia ${dataFormatada} às ${horaFormatada}.`;
+            const telefone = '+5531987039575';
+
             const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(mensagem)}`;
 
-            
             window.open(url, '_blank');
         });
     </script>
