@@ -209,9 +209,9 @@
                 return;
             }
 
-            // Formatação da data e hora conforme necessário
+
             const dataFormatada = new Date(data).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
-            const horaFormatada = hora; // A hora é capturada no formato correto, mas você pode formatá-la se necessário.
+            const horaFormatada = hora; 
 
             const mensagem = `Olá, meu nome é ${nome}. Gostaria de agendar os seguintes procedimentos: ${procedimentosSelecionados.join(', ')} para o dia ${dataFormatada} às ${horaFormatada}.`;
             const telefone = '+5531987039575';
