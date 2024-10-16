@@ -78,6 +78,9 @@
                         <option value="Reposicao De Unha">Reposição de Unha</option>
                         <option value="Remocao de Alongamento">Remoção Alongamento</option>
                         <option value="Pedicure">Pedicure</option>
+                        <option value="Curso de Alongamento">Curso de Alongamento</option>
+                        <option value="Curso de Aperfeiçoamento">Curso de Aperfeiçoamento</option>
+                        <option value="Curso de Manicure e Pedicure Normal">Curso de Manicure e Pedicure</option>
                     </select>
                     <div class="subtipo-container" style="display:none;">
                         <label for="subtipo">Selecione o Tipo de Alongamento</label>
@@ -214,7 +217,7 @@
 
 
             const dataFormatada = new Date(data).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
-            const horaFormatada = hora; 
+            const horaFormatada = hora;
 
             const mensagem = `Olá, meu nome é ${nome}. Gostaria de agendar os seguintes procedimentos: ${procedimentosSelecionados.join(', ')} para o dia ${dataFormatada} às ${horaFormatada}.`;
             const telefone = '+5531987039575';
