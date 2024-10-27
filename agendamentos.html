@@ -218,7 +218,9 @@
             }
 
 
-            const dataFormatada = new Date(data).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+            const dataSelecionada = data.split('-'); // Divide o formato AAAA-MM-DD
+            const dataFormatada = `${dataSelecionada[2]}/${dataSelecionada[1]}/${dataSelecionada[0]}`; // Formata para DD/MM/AAAA
+
             const horaFormatada = hora;
 
             const mensagem = `Olá, meu nome é ${nome}. Gostaria de agendar os seguintes procedimentos: ${procedimentosSelecionados.join(', ')} para o dia ${dataFormatada} às ${horaFormatada}.`;
