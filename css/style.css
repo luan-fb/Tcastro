@@ -511,6 +511,23 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+.btn-adicionar {
+    background-color: #4CAF50; /* Verde claro */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-adicionar:hover {
+    background-color: #45a049; /* Cor mais escura ao passar o mouse */
+}
+
 .btn-enviar {
     padding: 10px 20px;
     font-size: 1.2em;

@@ -93,7 +93,7 @@
                     </div>
                 </div>
             </div>
-            <button type="button" onclick="adicionarProcedimento()">Adicionar Outro Procedimento</button>
+            <button type="button" class="btn-adicionar" onclick="adicionarProcedimento()"> Adicionar Outro Procedimento </button>
 
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
@@ -218,8 +218,8 @@
             }
 
 
-            const dataSelecionada = data.split('-'); // Divide o formato AAAA-MM-DD
-            const dataFormatada = `${dataSelecionada[2]}/${dataSelecionada[1]}/${dataSelecionada[0]}`; // Formata para DD/MM/AAAA
+            const dataSelecionada = data.split('-'); 
+            const dataFormatada = `${dataSelecionada[2]}/${dataSelecionada[1]}/${dataSelecionada[0]}`; 
 
             const horaFormatada = hora;
 
